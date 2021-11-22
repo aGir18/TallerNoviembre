@@ -4,7 +4,6 @@ public class CocheNov extends VehiculoConRuedasNov implements ArrancableNov {
 
 	protected int numeroDeRuedas;
 	private String matricula;
-	private boolean estaAveriado;
 
 	@Override
 	public int getNumeroDeRuedas() {
@@ -15,6 +14,14 @@ public class CocheNov extends VehiculoConRuedasNov implements ArrancableNov {
 		this.matricula = matricula;
 	}
 
+//	public void setEstaAveriado(boolean estaAveriado) {
+//		this.estaAveriado = estaAveriado;
+//	}
+//
+//	public boolean isEstaAveriado() {
+//		return estaAveriado;
+//	}
+	
 	public CocheNov(String modelo, String color) {
 //        this(color);
 		super(modelo, color);
@@ -22,35 +29,33 @@ public class CocheNov extends VehiculoConRuedasNov implements ArrancableNov {
 		numeroDeRuedas = 4;
 	}
 
-	public void setEstaAveriado(boolean estaAveriado) {
-		this.estaAveriado = estaAveriado;
-	}
-
-	public boolean isEstaAveriado() {
-		return estaAveriado;
-	}
-
 	@Override
 	public void arrancar() {
 		System.out.println("CocheNov arrancado");
 	}
 
-	@Override
-	public void averiado() {
-		this.setEstaAveriado(true);
-	}
-	
-	@Override
-	public void reparado() {
-		this.setEstaAveriado(true);
-	}
+//	@Override
+//	public void averiado() {
+//		this.setEstaAveriado(true);
+//		this.numeroDeAverias ++;
+//	}
+//	
+//	@Override
+//	public void reparado() {
+//		if (numeroDeAverias <= 0) {
+//			
+//		} else {
+//			this.numeroDeAverias --;
+//			if (numeroDeAverias == 0) {
+//				this.setEstaAveriado(false);
+//			}
+//		
+//		}
+//	}
 
 	@Override
 	public double presupuesto(double numeroDeHoras, int numeroDePiezasRepuesto) {
-		double precioHora = 10;
-		double precioPieza = 5;
-
-		return numeroDeHoras * precioHora + numeroDePiezasRepuesto * precioPieza;
+		return super.presupuesto(numeroDeHoras, numeroDePiezasRepuesto);
 	}
 
 	@Override
@@ -74,8 +79,4 @@ public class CocheNov extends VehiculoConRuedasNov implements ArrancableNov {
 		CocheNov other = (CocheNov) obj;
 		return Objects.equals(matricula, other.matricula) && Objects.equals(getModelo(), other.getModelo());
 	}
-
-
-
-
 }
