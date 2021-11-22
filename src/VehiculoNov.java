@@ -1,4 +1,4 @@
-public class Vehiculo implements Comparable<Vehiculo> {
+public class VehiculoNov implements Comparable<VehiculoNov> {
 
 	private String modelo;
 	private String color;
@@ -15,7 +15,7 @@ public class Vehiculo implements Comparable<Vehiculo> {
 	    this.color = color;
 	}
 	
-	public Vehiculo(String modelo, String color) {
+	public VehiculoNov(String modelo, String color) {
 	    this.modelo = modelo;
 	    setColor(color);
 	}
@@ -26,7 +26,7 @@ public class Vehiculo implements Comparable<Vehiculo> {
     }
 
 	@Override
-	public int compareTo(Vehiculo otro) {
+	public int compareTo(VehiculoNov otro) {
 		return getModelo().compareTo(otro.getModelo());
 	}
 

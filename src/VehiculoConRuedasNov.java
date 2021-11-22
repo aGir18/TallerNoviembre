@@ -1,14 +1,14 @@
-public abstract class VehiculoConRuedas extends Vehiculo implements Arrancable {
-
+public abstract class VehiculoConRuedasNov extends VehiculoNov implements ArrancableNov, Averiable {
+	
 	public abstract int getNumeroDeRuedas();
 
-	public VehiculoConRuedas(String modelo, String color) {
+	public VehiculoConRuedasNov(String modelo, String color) {
 		super(modelo, color);
 	}
 
 	@Override
 	public void arrancar() {
-		System.out.println("Vehiculo arrancado");
+		System.out.println("VehiculoNov arrancado");
 	}
 
 	@Override
