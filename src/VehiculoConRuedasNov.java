@@ -10,6 +10,11 @@ public abstract class VehiculoConRuedasNov extends VehiculoNov implements Arranc
 		this.estaAveriado = estaAveriado;
 	}
 
+	public int getNumeroDeAverias() {
+		
+		return numeroDeAverias;
+	}
+
 	@Override
 	public void arrancar() {
 		System.out.println("VehiculoNov arrancado");
